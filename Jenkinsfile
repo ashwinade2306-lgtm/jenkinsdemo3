@@ -5,11 +5,19 @@ pipeline {
     }
     stages {
         stage('Checkout code') {
-            checkout scm
+            steps {
+                checkout scm
+
+            }
+            
 
         }
         stage('Extract Data') {
-            bat "${env.PYTHON} extract_data.py"
+            steps {
+                bat "${env.PYTHON} extract_data.py"
+
+            }
+            
 
         }
     }
